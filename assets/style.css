@@ -4,20 +4,14 @@
     --primary-color: #000;
     --secondary-color: #A1A1AA;
     --tertiary-color: #FFF;
-
     --border-color: #272729;
-
-    --line-color: rgba(255,255,255, 0.1);
-    --line-size: 0.5px;
-    /* --line-space: 1.77rem; */
-    --line-space: 0.5rem;
-    --line-shadow: #090909;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
 }
 
 body{
@@ -27,12 +21,15 @@ body{
     color: var(--secondary-color);
 }
 
+/* div{
+    border: 1px solid red;
+} */
+
 .wrapper{
     width: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-
     font-family: "Geist", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -49,8 +46,67 @@ body{
     background-image: url('img/d11.svg');
     background-repeat: repeat;
     background-position: center;
-    opacity: 0.06;
+    opacity: 0.07;
     z-index: -1;
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    z-index: 100;
+}
+
+.loading-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('img/d11.svg');
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.07;
+}
+
+.loading-container #spinner {
+    z-index: 1;
+    color: var(--secondary-color);
+}
+
+.loading-container.close{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.loading-container.close #spinner{
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.cursor{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    user-select: none;
+    pointer-events: none;
+    z-index: 200;
+
+    height: 0.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--tertiary-color);
+}
+
+.cursor:active{
+    transform: scale(2);
 }
 
 .sec{
@@ -59,9 +115,10 @@ body{
     padding: 0 3rem;
 }
 
+/** Landing Screen */
+
 .sec01 {
     padding-top: 2.5rem;
-    /* border: 1px solid red; */
 }
 
 .sec01 .header {
@@ -69,35 +126,70 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    font-weight: 400;
-    /* border: 1px solid red; */
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 .sec01 .header .name{
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.sec01 .header img {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.9;
+    display: none;
 }
 
 .sec01 .header .menu {
     display: flex;
     gap: 1rem;
-    font-size: 1rem;
 }
 
+.sec01 .header .name,
 .sec01 .header .menu .menu-item {
-    cursor: pointer;
     transition: color 0.25s ease-in-out;
 }
 
+.sec01 .header .name:hover,
 .sec01 .header .menu .menu-item:hover{
     color: var(--tertiary-color);
 }
 
-.sec01 .hero {
-    margin-top: 2rem;
-    font-size: 2rem;
-    /* border: 1px solid red; */
+.sec01 .header .mobile-btn {
+    display: none;
 }
 
-.sec01 .hero h1{
+.sec01 .header .mobile {
+    display: none;
+}
+
+.sec01 .div01 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.sec01 .div01 h1{
     font-weight: 200;
+}
+
+.sec01 .div02{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+
+}
+
+.sec01 .div02 .div02-item{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: color 0.25s ease-in-out;
+}
+
+.sec01 .div02 .div02-item:hover{
+    color: var(--tertiary-color);
 }

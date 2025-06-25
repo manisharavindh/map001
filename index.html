@@ -2,24 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <title>Manish Aravindh</title>
 
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="preload" href="assets/img/d11.svg" as="image">
+    
+    <script src="https://kit.fontawesome.com/5f4fc573ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="sec01 sec">
             <div class="header">
-                <div class="name">Manish Aravindh</div>
+                 <div class="name">
+                     <img src="assets/img/favicon.png" alt="Manish Aravindh">
+                     <span>Manish Aravindh</span>
+                 </div>
                 <div class="menu">
+                    <div class="menu-item">About</div>
+                    <div class="menu-item">Projects</div>
+                    <div class="menu-item">Contact</div>
+                </div>
+                <div class="mobile-btn mobile"></div>
+                <div class="menu mobile">
                     <div class="menu-item">GitHub</div>
                     <div class="menu-item">Linkedin</div>
                     <div class="menu-item">Resume</div>
                 </div>
             </div>
-            <div class="hero">
+            <div class="div01">
                 <h1>Data Science Student,<br>Always Building & Learning</h1>
+            </div>
+            <div class="div02">
+                <div class="div02-item">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="div02-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>Linkedin</span>
+                </div>
+                <div class="div02-item">
+                   <i class="fa-brands fa-instagram"></i>
+                   <span>Instagram</span>
+                </div>
             </div>
         </div>
         <div class="sec02 sec">
@@ -31,6 +58,13 @@
         <div class="sec04 sec">
             <p>More</p>
         </div>
+    </div>
+
+    <div class="cursor"></div>
+
+    <div class="loading-container">
+        <div class="loading-bg"></div>
+        <div id="spinner"></div>
     </div>
 
     <script src="assets/script.js"></script>
