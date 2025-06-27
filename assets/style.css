@@ -8,12 +8,14 @@
     --border-color: #272729;
 }
 
+.none, #none{
+    display: none !important;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
-    /* cursor: default; */
 }
 
 body{
@@ -22,10 +24,6 @@ body{
     background: var(--primary-color);
     color: var(--secondary-color);
 }
-
-/* div{
-    border: 1px solid rgba(255, 0, 0, 0.5);
-} */
 
 .wrapper{
     width: 100%;
@@ -96,31 +94,34 @@ body{
     transition: 0.25s;
 }
 
-.cursor{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    user-select: none;
-    pointer-events: none;
-    z-index: 100;
-    height: 0.75rem;
+/** cursor */
+.cursor {
+    position: fixed;
+    height: 3.5rem;
     aspect-ratio: 1;
+    border: 2px solid var(--hover-color);
     border-radius: 50%;
-    background-color: #FFF;
-    opacity: 0.75;
+    pointer-events: none;
+    z-index: 1000;
+    transition: width 0.25s, height 0.25s, background-color 0.25s, border-color 0.25s;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    opacity: 0;
 }
 
-.cursor:active{
-    transform: scale(2);
+.cursor.hover {
+    height: 5rem;
+    background-color: var(--hover-color);
+    border-color: transparent;
 }
+
+/** header */
 
 .sec{
     width: 100%;
     height: 100vh;
     padding: 0 3rem;
 }
-
-/** header */
 .sec01{
     position: relative;
     display: flex;
@@ -153,7 +154,7 @@ body{
 
 .header .name,
 .header .menu .menu-item {
-    /* cursor: pointer; */
+    cursor: pointer;
     transition: color 0.25s ease-in-out;
 }
 
@@ -198,7 +199,7 @@ body{
     align-items: center;
     gap: 0.25rem;
     transition: color 0.25s ease-in-out;
-    /* cursor: pointer; */
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 300;
     color: var(--secondary-color);
@@ -214,7 +215,7 @@ body{
     bottom: 2.5rem;
     width: 30px;
     aspect-ratio: 1;
-    /* cursor: pointer; */
+    cursor: pointer;
     animation: down 2.5s ease-in-out infinite;
 }
 
