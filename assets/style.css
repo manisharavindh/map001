@@ -6,25 +6,39 @@
     --tertiary-color: #A1A1AA;
     --hover-color: #FFF;
     --border-color: #272729;
+
+
+    --color-000: #000;
+    --color-001: #fff;
+
+    --color-002: #1A3636;
+    --color-003: #E5C9C8;
 }
 
 .none, #none{
-    /* display: none !important; */
+    display: none !important;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #E5C9C8 !important;
+    /* color: #E5C9C8 !important; */
+
+
+    color: var(--color-001) !important;
 }
 
 body{
     height: 100vh;
     width: 100vw;
+    background-color: var(--color-000);
+
+
+    /* background-color: #1A3636; */
+
     /* background: var(--primary-color); */
     /* color: var(--secondary-color); */
-    background-color: #1A3636;
     /* color: #F8EE02 !important; */
 }
 
@@ -54,6 +68,8 @@ body{
     background-position: center;
     opacity: 0.07;
     z-index: -1;
+
+    display: none;
 }
 
 .loading-container {
@@ -102,7 +118,7 @@ body{
     position: fixed;
     height: 3.5rem;
     aspect-ratio: 1;
-    border: 2px solid var(--hover-color);
+    border: 2px solid var(--color-001);
     border-radius: 50%;
     pointer-events: none;
     z-index: 1000;
@@ -114,22 +130,88 @@ body{
 
 .cursor.hover {
     height: 5rem;
-    background-color: var(--hover-color);
+    background-color: var(--color-001);
     border-color: transparent;
+}
+
+/** general  */
+.sec{
+    width: 100%;
+    height: 100vh;
+    padding: 2.5rem 3rem;
+}
+
+/** Square  */
+
+.square {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%);
+  width: 30%;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-001);
+  border-radius: 50%;
+  z-index: -1;
+  overflow: hidden;
+  animation: rotate 10s infinite linear;
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(50%, 50%) rotate(0deg);
+  }
+  to {
+    transform: translate(50%, 50%) rotate(360deg);
+  }
+}
+
+@keyframes counter-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('img/d11.svg');
+  background-repeat: repeat;
+  background-position: center;
+  z-index: 1;
+  animation: counter-rotate 10s infinite linear;
+}
+
+.square::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-000);
+  border-top: 1px solid var(--color-001);
+  z-index: 2;
 }
 
 /** header */
 
-.sec{
-    width: 100%;
-    height: 100vh;
-    padding: 0 3rem;
-}
+
 .sec01{
     position: relative;
     display: flex;
     flex-flow: column;
     height: 100%;
+
+    /* border: 1px solid; */
 }
 
 .header {
@@ -139,7 +221,7 @@ body{
     width: 100%;
     font-weight: 300;
     font-size: 1rem;
-    padding: 2.5rem 0;
+    padding-bottom: 2.5rem;
     flex: 0 1 auto;
 
 }
@@ -163,7 +245,7 @@ body{
 
 .header .name:hover,
 .header .menu .menu-item:hover{
-    color: var(--hover-color);
+    color: var(--color-001);
 }
 
 .content{
@@ -173,7 +255,7 @@ body{
     flex-direction: column;
     flex: 1 1 auto;
     padding-top: 12%;
-    color: var(--tertiary-color);
+    /* color: var(--tertiary-color); */
 }
 
 .div01 h1{
@@ -205,7 +287,7 @@ body{
     cursor: pointer;
     font-size: 1rem;
     font-weight: 300;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
 }
 
 .div02 .div02-item:hover{
@@ -214,8 +296,8 @@ body{
 
 .down{
     position: absolute;
-    left: 50%;
-    bottom: 2.5rem;
+    left: 4rem;
+    bottom: 4rem;
     width: 30px;
     aspect-ratio: 1;
     cursor: pointer;
@@ -247,7 +329,7 @@ body{
     bottom: 0.7rem;
     width: 16px;
     height: 3.5px;
-    background-color: #E5C9C8;
+    background-color: var(--color-001);
     transition: background-color 0.25s ease-in-out;
 }
 
@@ -267,11 +349,17 @@ body{
 
 .down:hover > .v::before,
 .down:hover > .v::after {
-    background-color: var(--hover-color);
+    /* background-color: var(--hover-color); */
 }
 
 a {
   all: unset;
+}
+
+
+/** sec02  */
+.sec02{
+    padding: 2.5rem 3rem;
 }
 
 
