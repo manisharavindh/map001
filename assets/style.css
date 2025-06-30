@@ -23,23 +23,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: #E5C9C8 !important; */
-
-
+    
     color: var(--color-001) !important;
+    /* color: #E5C9C8 !important; */
 }
 
 body{
     height: 100vh;
     width: 100vw;
-    background-color: var(--color-000);
+    background-color: #1A3636;
+    /* background-color: var(--color-000); */
+}
 
-
-    /* background-color: #1A3636; */
-
-    /* background: var(--primary-color); */
-    /* color: var(--secondary-color); */
-    /* color: #F8EE02 !important; */
+.border{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/d11.svg');
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    display: none;
 }
 
 .wrapper{
@@ -54,22 +63,6 @@ body{
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
-}
-
-.wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url('img/d11.svg');
-    background-repeat: repeat;
-    background-position: center;
-    opacity: 0.07;
-    z-index: -1;
-
-    display: none;
 }
 
 .loading-container {
@@ -95,12 +88,18 @@ body{
     background-image: url('img/d11.svg');
     background-repeat: repeat;
     background-position: center;
-    opacity: 0.07;
+    opacity: 0.09;
 }
 
 .loading-container #spinner {
     z-index: 1;
-    color: var(--secondary-color);
+    color: var(--color-001);
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loading-container.close{
@@ -148,22 +147,21 @@ body{
   bottom: 0;
   right: 0;
   transform: translate(50%, 50%);
-  width: 30%;
+  width: 35%;
   aspect-ratio: 1;
   border: 1px solid var(--color-001);
   border-radius: 50%;
-  z-index: -1;
   overflow: hidden;
-  animation: rotate 10s infinite linear;
-  opacity: 0.5;
+  animation: rotate 25s infinite linear;
+  opacity: 0.3;
 }
 
 @keyframes rotate {
   from {
-    transform: translate(50%, 50%) rotate(0deg);
+    transform: translate(0%, 50%) rotate(0deg);
   }
   to {
-    transform: translate(50%, 50%) rotate(360deg);
+    transform: translate(0%, 50%) rotate(360deg);
   }
 }
 
@@ -187,7 +185,7 @@ body{
   background-repeat: repeat;
   background-position: center;
   z-index: 1;
-  animation: counter-rotate 10s infinite linear;
+  animation: counter-rotate 25s infinite linear;
 }
 
 .square::after {
@@ -197,7 +195,7 @@ body{
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: var(--color-000);
+  background-color: #1A3636;
   border-top: 1px solid var(--color-001);
   z-index: 2;
 }
@@ -210,8 +208,6 @@ body{
     display: flex;
     flex-flow: column;
     height: 100%;
-
-    /* border: 1px solid; */
 }
 
 .header {
@@ -240,13 +236,15 @@ body{
 .header .name,
 .header .menu .menu-item {
     cursor: pointer;
-    transition: color 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+    /* opacity: 0.8; */
 }
 
-.header .name:hover,
+/* .header .name:hover,
 .header .menu .menu-item:hover{
     color: var(--color-001);
-}
+    opacity: 1;
+} */
 
 .content{
     font-size: 2rem;
@@ -255,7 +253,8 @@ body{
     flex-direction: column;
     flex: 1 1 auto;
     padding-top: 12%;
-    /* color: var(--tertiary-color); */
+    color: var(--color-001);
+    transition: opacity 0.25s ease-in-out;
 }
 
 .div01 h1{
@@ -283,21 +282,21 @@ body{
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    transition: color 0.25s ease-in-out;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 300;
-    /* color: var(--secondary-color); */
+    color: var(--color-001);
+    transition: opacity 0.25s ease-in-out;
 }
 
-.div02 .div02-item:hover{
-    color: var(--hover-color);
-}
+/* .div02 .div02-item:hover{
+    opacity: 1;
+} */
 
 .down{
     position: absolute;
     left: 4rem;
-    bottom: 4rem;
+    bottom: 3rem;
     width: 30px;
     aspect-ratio: 1;
     cursor: pointer;
